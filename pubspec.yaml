@@ -1,0 +1,58 @@
+name: bini
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
+  curved_navigation_bar: ^1.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/english/Roboto-Regular.ttf
+        - asset: fonts/english/Roboto-Bold.ttf
+        - asset: fonts/english/Roboto-Italic.ttf
+        - asset: fonts/english/Roboto-BoldItalic.ttf
+        - asset: fonts/english/Roboto-Light.ttf
+        - asset: fonts/english/Roboto-LightItalic.ttf
+        - asset: fonts/english/Roboto-Medium.ttf
+        - asset: fonts/english/Roboto-MediumItalic.ttf
+        - asset: fonts/english/Roboto-Thin.ttf
+        - asset: fonts/english/Roboto-ThinItalic.ttf
+        - asset: fonts/english/Roboto-Black.ttf
+        - asset: fonts/english/Roboto-BlackItalic.ttf
+    - family: Ethiopia
+      fonts:
+        - asset: fonts/amharic/Adwa-Bold.ttf
+        - asset: fonts/amharic/Adwa-Regular.ttf
+        - asset: fonts/amharic/AdwaSansSerif-Bold.ttf
+        - asset: fonts/amharic/AdwaSansSerif-Regular.ttf
+        - asset: fonts/amharic/Anbassa.ttf
+        - asset: fonts/amharic/Arada.ttf
+        - asset: fonts/amharic/Entoto.ttf
+        - asset: fonts/amharic/Godana-Regular.ttf
+        - asset: fonts/amharic/Meaza.ttf
+        - asset: fonts/amharic/Menelik.ttf
+        - asset: fonts/amharic/Neteru.ttf
+        - asset: fonts/amharic/Shiromeda-Bold.ttf
+        - asset: fonts/amharic/Shiromeda-Regular.ttf
+        - asset: fonts/amharic/Shiromeda-SemiBold.ttf
+        - asset: fonts/amharic/ShiromedaSerif-Bold.ttf
+        - asset: fonts/amharic/ShiromedaSerif-Regular.ttf
+        - asset: fonts/amharic/ShiromedaSerif-SemiBold.ttf
+        - asset: fonts/amharic/Tayitu.ttf
