@@ -1,5 +1,6 @@
 import 'package:bini/Screen2.dart';
 import 'package:bini/home/appbar.dart';
+import 'package:bini/read.dart';
 import 'package:bini/vvv.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -307,7 +308,10 @@ class _ScrollableListViewState extends State<ScrollableListView> {
                             ),
                             onTap: () {
                               if (index == 0) {
-                                _handleCardTap(index);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => REad()));
                               } else if (index == 1) {
                                 _handleCardTap(index);
                                 // Perform an action specific to index 1.

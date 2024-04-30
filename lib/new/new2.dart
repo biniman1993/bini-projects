@@ -134,7 +134,7 @@ class New13 extends StatelessWidget {
                                 builder: (context) => ScrollableListView2()));
                       },
                       child: const Text(
-                        '             እንቀጥል              ',
+                        '          እንቀጥል              ',
                         style: TextStyle(
                           color: Color.fromARGB(
                               255, 32, 5, 82), // Adjust text color

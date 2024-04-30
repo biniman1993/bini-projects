@@ -9,6 +9,8 @@ import 'package:bini/others/home_r.dart';
 import 'package:bini/new/new.dart';
 import 'package:bini/read.dart';
 import 'package:bini/topics/Core0.dart';
+import 'package:bini/topics/newread.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromRGBO(103, 58, 183, 1)),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: REad(),
     );
   }
 }

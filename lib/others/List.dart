@@ -1,109 +1,243 @@
 import 'package:bini/home/appbar.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class Mynewww extends StatefulWidget {
-  const Mynewww({super.key});
-
-  @override
-  State<Mynewww> createState() => _MynewwwState();
+LinearGradient generateGradient(Color color1, Color color2,
+    {required Color color}) {
+  return LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      color1,
+      color2,
+    ],
+  );
 }
 
-class _MynewwwState extends State<Mynewww> {
+class REadnew extends StatefulWidget {
+  final String title;
+  const REadnew({Key? key, required this.title}) : super(key: key);
+  @override
+  State<REadnew> createState() => _REadState();
+}
+
+class _REadState extends State<REadnew> {
+  String noteText = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const Mybar(),
       appBar: AppBar(
-        title: const Text('Hellow', textAlign: TextAlign.center),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 227, 226, 236),
+                Color.fromARGB(255, 31, 9, 156),
+              ],
+            ),
+          ),
+        ),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.favorite_rounded),
+            color: const Color.fromARGB(255, 228, 83, 83),
+          ),
+        ],
       ),
-      body: ListView.builder(
-        itemCount: 10, // Adjust number of items as needed
-        itemBuilder: (context, index) {
-          return Card(
-            margin: const EdgeInsets.all(30.0),
-            elevation: 5.0, // Add shadow
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        color: const Color.fromARGB(255, 44, 24, 97),
+        animationDuration: const Duration(milliseconds: 350),
+        items: [
+          const Icon(
+            Icons.home,
+            color: Colors.white,
+          ),
+          const Icon(
+            Icons.menu,
+            color: Colors.white,
+          ),
+          const Icon(
+            Icons.settings,
+            color: Colors.white,
+          ),
+          IconButton(
+            onPressed: () {
+              _showNotePopup(context); // Show note popup
+            },
+            icon: const Icon(
+              Icons.help,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            width: 600,
+            height: 50,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30), // Circular border radius
+              boxShadow: [
+                BoxShadow(
+                  color: const Color.fromARGB(255, 5, 5, 1).withOpacity(0.1),
+                  spreadRadius: 0.4,
+                  blurRadius: 7,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Make the image circular and fit the card dimensions
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(
-                      50), // Adjust border radius as needed
-                  child: const SizedBox(
-                    height: 70.0, // Adjust image height as needed
-                    width: 70.0, // Set width equal to height
-                    child: Image(
-                      image: AssetImage(
-                        'assets/a.jpg',
+                IconButton(
+                  onPressed: () {
+                    // Add your onPressed action here
+                  },
+                  icon: const Icon(Icons.arrow_back),
+                  color: Colors.black,
+                ),
+                const Expanded(
+                  child: Center(
+                    child: Text(
+                      'Sewu mindenew',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                   ),
                 ),
-                // Adjust text content as needed
-                const Expanded(
-                  child: Center(child: Text('About God')),
+                IconButton(
+                  onPressed: () {
+                    // Add your onPressed action here
+                  },
+                  icon: const Icon(Icons.arrow_forward),
+                  color: const Color.fromARGB(255, 10, 10, 10),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.only(
+                  top: 5,
+                  left: 20,
+                  right: 30,
+                  bottom: 5,
+                ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "God create everything for its own blessing but it is not for some danger of human beings Moto God create everything for its own blessing but it is not for some danger of human beings Moto God create everything for its own blessing but it is not for some danger of human beings Moto God create everything for its own blessing but it is not for some danger of human beings Moto",
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Function to show note popup
+  Future<void> _showNotePopup(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('My Note'),
+          content: SizedBox(
+            width: 400,
+            height: 400,
+            child: Column(
+              children: [
+                TextField(
+                  onChanged: (value) {
+                    noteText = value; // Update note text
+                  },
+                  maxLines: 11,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your note...',
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
                 ),
                 Row(
-                  // Add spacing between favorite icon and new icon
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.favorite_border),
-                      color: Colors.grey,
-                    ),
-                    IconButton(
+                    TextButton(
                       onPressed: () {
-                        // Open the popup window on icon tap
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return _buildSubListPopup(context);
-                          },
-                        );
+                        Navigator.of(context).pop(); // Close popup
                       },
-                      icon: const Icon(
-                          Icons.more_vert), // Replace with your desired icon
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        // Add save functionality here
+                        print('Note saved: $noteText');
+                        Navigator.of(context).pop(); // Close popup
+                      },
+                      child: const Text('Save'),
                     ),
                   ],
                 ),
               ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 
-  Widget _buildSubListPopup(BuildContext context) {
-    return Dialog(
-      // Ensure full-screen width and some height
-      child: Container(
-        width: double.infinity,
-        height:
-            MediaQuery.of(context).size.height * 0.5, // Set a specific height
-        child: Column(
-          mainAxisSize: MainAxisSize.min, // Avoid excessive height
-          children: [
-            // Optional title text
-            const Text('Welcome to the cards'),
-            Expanded(
-              // Expand the list to fill remaining space
-              child: ListView.builder(
-                shrinkWrap: true, // Prevent excessive scrolling
-                itemCount: 5, // Adjust number of sub-items as needed
-                itemBuilder: (context, index) {
-                  return const Card(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-                    elevation: 2.0, // Add shadow
-                    child: ListTile(
-                      title: Text('bini'),
-                      trailing: Icon(Icons.chevron_right), // Optional arrow
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
+  // Function to show question popup
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Page'),
+      ),
+      body: const Center(
+        child: Text(
+          'This is the second page',
+          style: TextStyle(fontSize: 24),
         ),
       ),
     );

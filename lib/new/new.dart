@@ -94,7 +94,9 @@ class New1 extends StatelessWidget {
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       color: Color.fromARGB(255, 8, 8, 8), // Adjust text color
-                      fontSize: 16.0, // Adjust text size
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      // Adjust text size
                     ),
                   ),
                 ),
@@ -137,7 +139,6 @@ class New1 extends StatelessWidget {
                           color: Color.fromARGB(
                               255, 32, 5, 82), // Adjust text color
                           fontSize: 24.0,
-
                           fontWeight: FontWeight.bold, // Adjust text size
                         ),
                       ),
