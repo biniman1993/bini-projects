@@ -1,6 +1,6 @@
 import 'package:bini/Screen2.dart';
+// ignore: unused_import
 import 'package:bini/read.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class Photos extends StatefulWidget {
@@ -138,7 +138,6 @@ class _PhotosState extends State<Photos> {
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),

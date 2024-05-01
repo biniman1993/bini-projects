@@ -11,7 +11,6 @@ class NewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Mybar(),
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: const BoxDecoration(

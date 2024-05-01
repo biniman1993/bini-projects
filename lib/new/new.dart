@@ -31,6 +31,23 @@ class New1 extends StatelessWidget {
               color: Colors.white,
             ),
           ],
+          onTap: (index) {
+            switch (index) {
+              case 0:
+                _showHomePopup(context);
+                break;
+              case 1:
+                _showMenuPopup(context);
+
+                break;
+              case 2:
+                _showSettingsPopup(context);
+                break;
+              case 3:
+                _showHelpPopup(context);
+                break;
+            }
+          },
         ),
         body: CustomScrollView(
           slivers: [
@@ -94,7 +111,7 @@ class New1 extends StatelessWidget {
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       color: Color.fromARGB(255, 8, 8, 8), // Adjust text color
-                      fontSize: 18.0,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       // Adjust text size
                     ),
@@ -150,4 +167,118 @@ class New1 extends StatelessWidget {
           ],
         ));
   }
+}
+
+void _showHomePopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Home'),
+        content: Text('Are you sure you want to go to the main home?'),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Yes'),
+            onPressed: () {
+              // Perform action to go to main home
+              Navigator.pop(context);
+            },
+          ),
+          TextButton(
+            child: Text('No'),
+            onPressed: () {
+              // Perform action to stay
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void _showMenuPopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Settings'),
+        content: Text('Are you sure you want to go to the settings?'),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Yes'),
+            onPressed: () {
+              // Perform action to go to settings
+              Navigator.pop(context);
+            },
+          ),
+          TextButton(
+            child: Text('No'),
+            onPressed: () {
+              // Perform action to cancel
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void _showHelpPopup(BuildContext context) {
+  // Implement help popup
+}
+void _showSettingsPopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Settings',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16.0),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 10, // Number of sublists
+                  itemBuilder: (context, index) {
+                    final sublistTitle = [
+                      'gghg',
+                      'ghfgh',
+                      'hghgh',
+                      'ghg',
+                      'ghgh',
+                      'ghhg',
+                      'hghg',
+                      'hghh',
+                      'hghg',
+                      'hgh'
+                    ][index];
+                    return ListTile(
+                      title: Text(sublistTitle),
+                      onTap: () {
+                        // Handle sublist item press
+                        // Perform action when sublist item is clicked
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }

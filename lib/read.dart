@@ -1,4 +1,5 @@
 import 'package:bini/home/appbar.dart';
+import 'package:bini/topics/Core0.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -117,6 +118,11 @@ class _MyScreensState extends State<REad> {
                           setState(() {
                             currentIndex--;
                           });
+                        } else {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ScrollableListView()));
                         }
                       },
                       icon: const Icon(Icons.arrow_back),

@@ -1,4 +1,3 @@
-import 'package:bini/Screen2.dart';
 import 'package:bini/home/fhome_my.dart';
 import 'package:flutter/material.dart';
 

@@ -1,3 +1,4 @@
+import 'package:bini/bbbb.dart';
 import 'package:bini/home/appbar.dart';
 import 'package:bini/home/fhome_my.dart';
 import 'package:bini/new/new.dart';
@@ -6,6 +7,7 @@ import 'package:bini/new/new2.dart';
 import 'package:bini/new/new3.dart';
 import 'package:bini/topics/Core0.dart';
 import 'package:bini/topics/Core1.dart';
+import 'package:bini/vvv.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +73,7 @@ class SecondHome extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        color: const Color.fromARGB(255, 220, 221, 223),
+        color: Color.fromARGB(255, 252, 253, 253),
         height: 60,
         child: Container(
           child: Center(
@@ -79,29 +81,40 @@ class SecondHome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.share),
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  width: 3,
-                ),
-                IconButton(
-                  icon: const Icon(Icons.home),
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  width: 3,
-                ),
-                IconButton(
-                  icon: const Icon(Icons.home),
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  width: 3,
-                ),
-                IconButton(
                   icon: const Icon(Icons.settings),
-                  onPressed: () {},
+                  onPressed: () {
+                    _showSettingsPopup(context);
+                  },
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.home),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Photos()));
+                  },
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.info_sharp),
+                  onPressed: () {
+                    _showAboutDialog(context); // Show note popup
+                  },
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.share),
+                  onPressed: () {
+                    _showSharePopup(context);
+                  },
                 ),
               ],
             ),
@@ -226,7 +239,7 @@ class SecondHome extends StatelessWidget {
                         borderRadius: BorderRadius.circular(45),
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromARGB(255, 255, 255, 255),
+                            const Color.fromARGB(255, 255, 255, 255),
                             Color.fromARGB(255, 20, 32, 104),
                           ],
                           begin: Alignment.centerLeft,
@@ -262,8 +275,8 @@ class SecondHome extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                            color: const Color.fromARGB(255, 182, 179, 179),
-                            icon: const Icon(Icons.folder),
+                            color: Color.fromARGB(255, 233, 21, 21),
+                            icon: const Icon(Icons.favorite),
                             onPressed: () {},
                           ),
                         ],
@@ -332,8 +345,8 @@ class SecondHome extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                            color: const Color.fromARGB(255, 182, 179, 179),
-                            icon: const Icon(Icons.folder),
+                            color: Color.fromARGB(255, 233, 21, 21),
+                            icon: const Icon(Icons.favorite),
                             onPressed: () {},
                           ),
                         ],
@@ -402,8 +415,8 @@ class SecondHome extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                            color: const Color.fromARGB(255, 182, 179, 179),
-                            icon: const Icon(Icons.folder),
+                            color: Color.fromARGB(255, 233, 21, 21),
+                            icon: const Icon(Icons.favorite),
                             onPressed: () {},
                           ),
                         ],
@@ -421,4 +434,241 @@ class SecondHome extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showAboutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 255, 255, 255),
+                Color.fromARGB(255, 20, 32, 104),
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          width: 400.0, // Customize the width
+          height: 520.0, // Customize the height
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'About',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ListTile(
+                leading: const Icon(Icons.check_circle),
+                title: const Text('List Item 1'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.check_circle),
+                title: const Text('List Item 2'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.check_circle),
+                title: const Text('List Item 3'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.check_circle),
+                title: const Text('List Item 4'),
+              ),
+              const SizedBox(height: 16),
+              const Text('Contact Us'),
+              ListTile(
+                leading: const Icon(Icons.phone),
+                title: const Text('Call'),
+                onTap: () {
+                  // Handle call functionality
+                },
+              ),
+              const SizedBox(height: 8),
+              const Text('Developed by Bini'),
+              const Text('Saying things about the developer'),
+              const SizedBox(height: 16),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  child: const Text('Close'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void _showSharePopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 255, 255, 255),
+                Color.fromARGB(255, 20, 32, 104),
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Share',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ListTile(
+                leading: const Icon(Icons.face),
+                title: const Text('Facebook'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.music_note),
+                title: const Text('TikTok'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.send),
+                title: const Text('Telegram'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.camera),
+                title: const Text('Instagram'),
+              ),
+              SizedBox(height: 16.0),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  child: const Text('Close'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+Future<void> _showSettingsPopup(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Settings'),
+        content: Container(
+          height: 400,
+          width: 300,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ListTile(
+                  leading: Icon(Icons.format_size),
+                  title: Text('Text Size'),
+                  onTap: () {
+                    // Handle text size change
+                    Navigator.of(context).pop();
+                    _showTextSizePopup(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.font_download),
+                  title: Text('Font'),
+                  onTap: () {
+                    // Handle font change
+                    Navigator.of(context).pop();
+                    _showFontChangePopup(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.exit_to_app),
+                  title: Text('Log Out'),
+                  onTap: () {
+                    // Handle log out
+                    Navigator.of(context).pop();
+                    _showLogoutConfirmation(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.nightlight_round),
+                  title: Text('Night Mode'),
+                  onTap: () {
+                    // Handle night mode
+                    Navigator.of(context).pop();
+                    _showNightModePopup(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.lightbulb),
+                  title: Text('Suggestions'),
+                  onTap: () {
+                    // Handle suggestions
+                    Navigator.of(context).pop();
+                    _showSuggestionsPopup(context);
+                  },
+                ),
+                const Divider(),
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void _showTextSizePopup(BuildContext context) {
+  // Implement text size change popup
+}
+
+void _showFontChangePopup(BuildContext context) {
+  // Implement font change popup
+}
+
+void _showLogoutConfirmation(BuildContext context) {
+  // Implement logout confirmation popup
+}
+
+void _showNightModePopup(BuildContext context) {
+  // Implement night mode popup
+}
+
+void _showSuggestionsPopup(BuildContext context) {
+  // Implement suggestions popup
 }
