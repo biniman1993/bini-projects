@@ -26,6 +26,42 @@ class _MyScreensState extends State<REad> {
   ];
 
   int currentIndex = 0;
+  final List<String> titles = [
+    'Sewu Mndnew',
+    'Sle Egzyabher',
+    'Sele menfes kedus ',
+    'GOD',
+    'JEsus',
+    'Mecherash Zemen ',
+    'Wongel',
+    'Zelalem Mengist',
+    'Yeseytan Teliko',
+    'Mecherash',
+    'Title 11',
+    'Title 12',
+    'Title 13',
+    'Title 14',
+    'Title 15',
+    'Title 16',
+    'Title 17',
+    'Title 18',
+    'Title 19',
+    'Title 20',
+    'Title 21',
+    'Title 22',
+    'Title 23',
+    'Title 24',
+    'Title 25',
+    'Title 26',
+    'Title 27',
+    'Title 28',
+    'Title 29',
+    'Title 30',
+    'Title 31',
+    'Title 32',
+    'Title 33',
+    'Title 34',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +81,9 @@ class _MyScreensState extends State<REad> {
           ),
         ),
         title: Text(
-          'home',
+          'Begizabher Kal ewunet Menor',
           style: const TextStyle(
-            fontSize: 28,
+            fontSize: 23,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
@@ -78,12 +114,9 @@ class _MyScreensState extends State<REad> {
             Icons.settings,
             color: Colors.white,
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.help,
-              color: Colors.white,
-            ),
+          const Icon(
+            Icons.help,
+            color: Colors.white,
           ),
         ],
       ),
@@ -131,7 +164,7 @@ class _MyScreensState extends State<REad> {
                     Expanded(
                       child: Center(
                         child: Text(
-                          'Screen ${currentIndex + 1}',
+                          titles[currentIndex],
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -155,6 +188,7 @@ class _MyScreensState extends State<REad> {
                 ),
               ),
             ),
+
             const SizedBox(height: 10),
             Container(
               padding: const EdgeInsets.only(

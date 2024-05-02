@@ -214,6 +214,17 @@ void _showMenuPopup(BuildContext context) {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 75, 12, 146),
+                Color.fromARGB(255, 49, 49, 49)
+              ], // Replace with your desired gradient colors
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -227,37 +238,68 @@ void _showMenuPopup(BuildContext context) {
               ),
               SizedBox(height: 16.0),
               Expanded(
-                child: ListView.builder(
-                  itemCount: 20, // Number of sublists
+                child: ListView.separated(
+                  itemCount: 34, // Number of sublists
+                  separatorBuilder: (context, index) =>
+                      const Divider(), // Add a divider with white color
                   itemBuilder: (context, index) {
                     final sublistTitle = [
-                      'ROME',
-                      'JOHN',
-                      'PHILIPHANS',
-                      'EYOB',
-                      'DAWIT',
-                      'DANIEL',
-                      'ZEKARYAS',
-                      'ZEFTRET',
-                      'ZEDEGM',
-                      'ZEHALKU',
-                      'ROME',
-                      'JOHN',
-                      'PHILIPHANS',
-                      'EYOB',
-                      'DAWIT',
-                      'DANIEL',
-                      'ZEKARYAS',
-                      'ZEFTRET',
-                      'ZEDEGM',
-                      'ZEHALKU',
+                      'Sewu Mndnew',
+                      'Sle Egzyabher',
+                      'Sele menfes kedus ',
+                      'GOD',
+                      'JEsus',
+                      'Mecherash Zemen ',
+                      'Wongel',
+                      'Zelalem Mengist',
+                      'Yeseytan Teliko',
+                      'Mecherash',
+                      'Title 11',
+                      'Title 12',
+                      'Title 13',
+                      'Title 14',
+                      'Title 15',
+                      'Title 16',
+                      'Title 17',
+                      'Title 18',
+                      'Title 19',
+                      'Title 20',
+                      'Title 21',
+                      'Title 22',
+                      'Title 23',
+                      'Title 24',
+                      'Title 25',
+                      'Title 26',
+                      'Title 27',
+                      'Title 28',
+                      'Title 29',
+                      'Title 30',
+                      'Title 31',
+                      'Title 32',
+                      'Title 33',
+                      'Title 34',
                     ][index];
-                    return ListTile(
-                      title: Text(sublistTitle),
-                      onTap: () {
-                        // Handle sublist item press
-                        // Perform action when sublist item is clicked
-                      },
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors
+                                .white), // Add a border to differentiate each sublist
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: ListTile(
+                        title: Text(
+                          sublistTitle,
+                          style: TextStyle(
+                            color: Colors
+                                .white, // Set the text color to white to make it visible on the gradient background
+                          ),
+                        ),
+                        onTap: () {
+                          // Perform action when sublist item is clicked
+                          print(
+                              'Item $index pressed.'); // Example action, you can replace it with your own logic
+                        },
+                      ),
                     );
                   },
                 ),

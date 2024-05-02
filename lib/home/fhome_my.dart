@@ -1,6 +1,6 @@
 import 'package:bini/Screen2.dart';
 // ignore: unused_import
-import 'package:bini/read.dart';
+import 'package:bini/timhrtoch/read.dart';
 import 'package:flutter/material.dart';
 
 class Photos extends StatefulWidget {
