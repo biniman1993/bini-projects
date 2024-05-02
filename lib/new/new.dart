@@ -2,6 +2,7 @@ import 'package:bini/home/appbar.dart';
 import 'package:bini/topics/Core0.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:bini/Screen2.dart';
 
 class New1 extends StatelessWidget {
   const New1({super.key});
@@ -180,8 +181,11 @@ void _showHomePopup(BuildContext context) {
           TextButton(
             child: Text('Yes'),
             onPressed: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => const SecondHome()));
+
               // Perform action to go to main home
-              Navigator.pop(context);
+              // Navigator.pop(context);
             },
           ),
           TextButton(
@@ -197,38 +201,11 @@ void _showHomePopup(BuildContext context) {
   );
 }
 
-void _showMenuPopup(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Settings'),
-        content: Text('Are you sure you want to go to the settings?'),
-        actions: <Widget>[
-          TextButton(
-            child: Text('Yes'),
-            onPressed: () {
-              // Perform action to go to settings
-              Navigator.pop(context);
-            },
-          ),
-          TextButton(
-            child: Text('No'),
-            onPressed: () {
-              // Perform action to cancel
-              Navigator.pop(context);
-            },
-          ),
-        ],
-      );
-    },
-  );
-}
-
 void _showHelpPopup(BuildContext context) {
   // Implement help popup
 }
-void _showSettingsPopup(BuildContext context) {
+
+void _showMenuPopup(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -242,7 +219,7 @@ void _showSettingsPopup(BuildContext context) {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Settings',
+                'Beegizabherkal Ewunet Menor',
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -251,19 +228,29 @@ void _showSettingsPopup(BuildContext context) {
               SizedBox(height: 16.0),
               Expanded(
                 child: ListView.builder(
-                  itemCount: 10, // Number of sublists
+                  itemCount: 20, // Number of sublists
                   itemBuilder: (context, index) {
                     final sublistTitle = [
-                      'gghg',
-                      'ghfgh',
-                      'hghgh',
-                      'ghg',
-                      'ghgh',
-                      'ghhg',
-                      'hghg',
-                      'hghh',
-                      'hghg',
-                      'hgh'
+                      'ROME',
+                      'JOHN',
+                      'PHILIPHANS',
+                      'EYOB',
+                      'DAWIT',
+                      'DANIEL',
+                      'ZEKARYAS',
+                      'ZEFTRET',
+                      'ZEDEGM',
+                      'ZEHALKU',
+                      'ROME',
+                      'JOHN',
+                      'PHILIPHANS',
+                      'EYOB',
+                      'DAWIT',
+                      'DANIEL',
+                      'ZEKARYAS',
+                      'ZEFTRET',
+                      'ZEDEGM',
+                      'ZEHALKU',
                     ][index];
                     return ListTile(
                       title: Text(sublistTitle),
@@ -281,4 +268,161 @@ void _showSettingsPopup(BuildContext context) {
       );
     },
   );
+}
+
+void _showSharePopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 255, 255, 255),
+                Color.fromARGB(255, 20, 32, 104),
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Share',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ListTile(
+                leading: const Icon(Icons.face),
+                title: const Text('Facebook'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.music_note),
+                title: const Text('TikTok'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.send),
+                title: const Text('Telegram'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.camera),
+                title: const Text('Instagram'),
+              ),
+              SizedBox(height: 16.0),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  child: const Text('Close'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+Future<void> _showSettingsPopup(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Settings'),
+        content: Container(
+          height: 400,
+          width: 300,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ListTile(
+                  leading: Icon(Icons.format_size),
+                  title: Text('Text Size'),
+                  onTap: () {
+                    // Handle text size change
+                    Navigator.of(context).pop();
+                    _showTextSizePopup(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.font_download),
+                  title: Text('Font'),
+                  onTap: () {
+                    // Handle font change
+                    Navigator.of(context).pop();
+                    _showFontChangePopup(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.exit_to_app),
+                  title: Text('Log Out'),
+                  onTap: () {
+                    // Handle log out
+                    Navigator.of(context).pop();
+                    _showLogoutConfirmation(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.nightlight_round),
+                  title: Text('Night Mode'),
+                  onTap: () {
+                    // Handle night mode
+                    Navigator.of(context).pop();
+                    _showNightModePopup(context);
+                  },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: Icon(Icons.lightbulb),
+                  title: Text('Suggestions'),
+                  onTap: () {
+                    // Handle suggestions
+                    Navigator.of(context).pop();
+                    _showSuggestionsPopup(context);
+                  },
+                ),
+                const Divider(),
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void _showTextSizePopup(BuildContext context) {
+  // Implement text size change popup
+}
+
+void _showFontChangePopup(BuildContext context) {
+  // Implement font change popup
+}
+
+void _showLogoutConfirmation(BuildContext context) {
+  // Implement logout confirmation popup
+}
+
+void _showNightModePopup(BuildContext context) {
+  // Implement night mode popup
+}
+
+void _showSuggestionsPopup(BuildContext context) {
+  // Implement suggestions popup
 }
