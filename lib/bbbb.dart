@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                         left: 50,
                         right: 20,
                         child: Text(
-                          'Binithis is my first app that i preper it for tehadso alemakef church and i just thanks to God i finshied ',
+                          "Binithis is my first app that i preper it for tehadso alemakef church and i just thanks to God i finshied ",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 24.0,

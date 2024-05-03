@@ -1,13 +1,8 @@
 import 'dart:js';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class MybiniApp extends StatelessWidget {
   final List<String> keywords = ['God', 'Christianity', 'Islam', 'Judaism'];
 
   final String text =
@@ -25,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Text Highlighting'),
+          title: const Text('Text Highlighting'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -42,7 +37,6 @@ class MyApp extends StatelessWidget {
   TextSpan highlightText() {
     List<TextSpan> textSpans = [];
     List<String> words = text.split(' ');
-
     for (int i = 0; i < words.length; i++) {
       String word = words[i];
       textSpans.add(
@@ -59,7 +53,6 @@ class MyApp extends StatelessWidget {
         ),
       );
     }
-
     return TextSpan(children: textSpans);
   }
 
@@ -72,7 +65,7 @@ class MyApp extends StatelessWidget {
           content: Text(popupTextList[index]),
           actions: [
             TextButton(
-              child: Text('Close'),
+              child: const Text('Close'),
               onPressed: () {
                 Navigator.of(dialogContext).pop();
               },

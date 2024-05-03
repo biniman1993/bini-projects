@@ -167,7 +167,7 @@ class SecondHome extends StatelessWidget {
                       width: 380,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(45),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color.fromARGB(255, 255, 255, 255),
                             Color.fromARGB(255, 20, 32, 104),
@@ -237,9 +237,9 @@ class SecondHome extends StatelessWidget {
                       width: 380,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(45),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
-                            const Color.fromARGB(255, 255, 255, 255),
+                            Color.fromARGB(255, 255, 255, 255),
                             Color.fromARGB(255, 20, 32, 104),
                           ],
                           begin: Alignment.centerLeft,
@@ -307,7 +307,7 @@ class SecondHome extends StatelessWidget {
                       width: 380,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(45),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color.fromARGB(255, 255, 255, 255),
                             Color.fromARGB(255, 20, 32, 104),
@@ -377,7 +377,7 @@ class SecondHome extends StatelessWidget {
                       width: 380,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(45),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color.fromARGB(255, 255, 255, 255),
                             Color.fromARGB(255, 20, 32, 104),
@@ -445,7 +445,7 @@ void _showAboutDialog(BuildContext context) {
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(255, 255, 255, 255),
@@ -462,7 +462,7 @@ void _showAboutDialog(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              const Text(
                 'About',
                 style: TextStyle(
                   fontSize: 18.0,
@@ -470,21 +470,21 @@ void _showAboutDialog(BuildContext context) {
                 ),
               ),
               SizedBox(height: 16.0),
-              ListTile(
-                leading: const Icon(Icons.check_circle),
-                title: const Text('List Item 1'),
+              const ListTile(
+                leading: Icon(Icons.check_circle),
+                title: Text('List Item 1'),
               ),
-              ListTile(
-                leading: const Icon(Icons.check_circle),
-                title: const Text('List Item 2'),
+              const ListTile(
+                leading: Icon(Icons.check_circle),
+                title: Text('List Item 2'),
               ),
-              ListTile(
-                leading: const Icon(Icons.check_circle),
-                title: const Text('List Item 3'),
+              const ListTile(
+                leading: Icon(Icons.check_circle),
+                title: Text('List Item 3'),
               ),
-              ListTile(
-                leading: const Icon(Icons.check_circle),
-                title: const Text('List Item 4'),
+              const ListTile(
+                leading: Icon(Icons.check_circle),
+                title: Text('List Item 4'),
               ),
               const SizedBox(height: 16),
               const Text('Contact Us'),
@@ -525,7 +525,7 @@ void _showSharePopup(BuildContext context) {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(255, 255, 255, 255),
@@ -539,7 +539,7 @@ void _showSharePopup(BuildContext context) {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              const Text(
                 'Share',
                 style: TextStyle(
                   fontSize: 18.0,
@@ -547,21 +547,21 @@ void _showSharePopup(BuildContext context) {
                 ),
               ),
               SizedBox(height: 16.0),
-              ListTile(
-                leading: const Icon(Icons.face),
-                title: const Text('Facebook'),
+              const ListTile(
+                leading: Icon(Icons.face),
+                title: Text('Facebook'),
               ),
-              ListTile(
-                leading: const Icon(Icons.music_note),
-                title: const Text('TikTok'),
+              const ListTile(
+                leading: Icon(Icons.music_note),
+                title: Text('TikTok'),
               ),
-              ListTile(
-                leading: const Icon(Icons.send),
-                title: const Text('Telegram'),
+              const ListTile(
+                leading: Icon(Icons.send),
+                title: Text('Telegram'),
               ),
-              ListTile(
-                leading: const Icon(Icons.camera),
-                title: const Text('Instagram'),
+              const ListTile(
+                leading: Icon(Icons.camera),
+                title: Text('Instagram'),
               ),
               SizedBox(height: 16.0),
               Align(

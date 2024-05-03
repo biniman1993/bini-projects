@@ -7,6 +7,7 @@ import 'package:bini/home/fhome_my.dart';
 import 'package:bini/home/home-page.dart';
 import 'package:bini/others/home_r.dart';
 import 'package:bini/new/new.dart';
+import 'package:bini/texthover.dart';
 import 'package:bini/timhrtoch/read.dart';
 import 'package:bini/topics/Core0.dart';
 import 'package:bini/topics/newread.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 150, 139, 168)),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: MybiniApp(),
     );
   }
 }
