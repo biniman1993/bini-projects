@@ -6,12 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 String noteText = '';
-
 class ScrollableListView extends StatefulWidget {
   @override
   _ScrollableListViewState createState() => _ScrollableListViewState();
 }
-
 class _ScrollableListViewState extends State<ScrollableListView> {
   final List<String> titles = [
     'Sewu Mndnew',
@@ -169,7 +167,6 @@ class _ScrollableListViewState extends State<ScrollableListView> {
       },
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

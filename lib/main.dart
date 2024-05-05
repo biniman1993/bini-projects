@@ -11,7 +11,6 @@ import 'package:bini/texthover.dart';
 import 'package:bini/timhrtoch/read.dart';
 import 'package:bini/topics/Core0.dart';
 import 'package:bini/topics/newread.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,6 +20,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   // This widget is the root of your application.
+  // This widget
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 150, 139, 168)),
         useMaterial3: true,
       ),
-      home: MybiniApp(),
+      home: const HomePage(),
     );
   }
 }

@@ -5,10 +5,6 @@ import 'package:bini/new/new.dart';
 import 'package:bini/new/new1.dart';
 import 'package:bini/new/new2.dart';
 import 'package:bini/new/new3.dart';
-import 'package:bini/topics/Core0.dart';
-import 'package:bini/topics/Core1.dart';
-import 'package:bini/vvv.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class SecondHome extends StatelessWidget {
